@@ -14,4 +14,7 @@ dependencies:
 ## Customize test commands
 test:
   override:
-    - bundle exec rake
+    - bundle exec rake test:unit
+    - bundle exec rake test:integration:rails_32 test:integration:rails_31 test:integration:rails_30
+    - bundle exec rake appraisal cucumber
+    - bundle exec rake coveralls:push

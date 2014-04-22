@@ -15,7 +15,14 @@ require './lib/airbrake/version'
 
 Coveralls::RakeTask.new
 
-task :default => ["test:unit", "test:integration"]
+task :default => [
+  "test:unit",
+  "test:integration:rails_32",
+  "test:integration:rails_31",
+  "test:integration:rails_30",
+  "test:cucumber",
+  "coveralls:push"
+]
 
 namespace :test do
   Rake::TestTask.new(:unit) do |t|
@@ -25,12 +32,26 @@ namespace :test do
   end
 
   desc "Integration tests for all versions of Rails."
-  task :integration do
-    system 'INTEGRATION=true rake appraisal:rails-3.2 integration_test'\
-    '&& INTEGRATION=true rake appraisal:rails-3.1 integration_test'\
-    '&& INTEGRATION=true rake appraisal:rails-3.0 integration_test'\
-    '&& rake coveralls:push'\
-    '&& INTEGRATION=true rake appraisal cucumber'
+  namespace :integration do
+    task :rails_32 do
+      ENV['INTEGRATION'] = 'true'
+      system 'rake appraisal:rails-3.2 integration_test'
+    end
+
+    task :rails_31 do
+      ENV['INTEGRATION'] = 'true'
+      system 'rake appraisal:rails-3.1 integration_test'
+    end
+
+    task :rails_30 do
+      ENV['INTEGRATION'] = 'true'
+      system 'rake appraisal:rails-3.0 integration_test'
+    end
+  end
+
+  task :cucumber do
+    ENV['INTEGRATION'] = 'true'
+    system 'rake appraisal cucumber'
   end
 end
 
