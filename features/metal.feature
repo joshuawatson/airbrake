@@ -1,6 +1,6 @@
 Feature: Rescue errors in Rails middleware
   Background:
-    Given I successfully run `rails new rails_root -O --skip-gemfile`
+    Given I successfully run `bundle exec rails new rails_root`
     And I cd to "rails_root"
     And I configure the notifier to use the following configuration lines:
     """

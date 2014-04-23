@@ -15,6 +15,18 @@ dependencies:
 test:
   override:
     - bundle exec rake test:unit
-    - bundle exec rake test:integration:rails_32 test:integration:rails_31 test:integration:rails_30
-    - bundle exec rake appraisal cucumber
+    - bundle exec rake test:integration:rails_40
+    - bundle exec rake test:integration:rails_32
+    - bundle exec rake test:integration:rails_31
+    - bundle exec rake test:integration:rails_30
+    - bundle exec rake test:integration:rack
+    - bundle exec rake test:integration:sinatra
+    - bundle exec rake test:integration:rake
+    - bundle exec rake test:cucumber:rails_40
+    - bundle exec rake test:cucumber:rails_32
+    - bundle exec rake test:cucumber:rails_31
+    - bundle exec rake test:cucumber:rails_30
+    - bundle exec rake test:cucumber:rack
+    - bundle exec rake test:cucumber:sinatra
+    - bundle exec rake test:cucumber:rake
     - bundle exec rake coveralls:push
