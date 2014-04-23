@@ -45,74 +45,74 @@ namespace :test do
   namespace :integration do
     task :rake do
       ENV['INTEGRATION'] = 'true'
-      system 'rake appraisal:rake integration_test' or exit!(1)
+      system 'appraisal rake rake integration_test' or exit!(1)
     end
 
     task :sinatra do
       ENV['INTEGRATION'] = 'true'
-      system 'rake appraisal:sinatra integration_test' or exit!(1)
+      system 'appraisal sinatra rake integration_test' or exit!(1)
     end
 
     task :rack do
       ENV['INTEGRATION'] = 'true'
-      system 'rake appraisal:rack integration_test' or exit!(1)
+      system 'appraisal rack rake integration_test' or exit!(1)
     end
 
     task :rails_40 do
       ENV['INTEGRATION'] = 'true'
-      system 'rake appraisal:rails-4.0 integration_test' or exit!(1)
+      system 'appraisal rails-4.0 rake integration_test' or exit!(1)
     end
 
     task :rails_32 do
       ENV['INTEGRATION'] = 'true'
-      system 'rake appraisal:rails-3.2 integration_test' or exit!(1)
+      system 'appraisal rails-3.2 rake integration_test' or exit!(1)
     end
 
     task :rails_31 do
       ENV['INTEGRATION'] = 'true'
-      system 'rake appraisal:rails-3.1 integration_test' or exit!(1)
+      system 'appraisal rails-3.1 rake integration_test' or exit!(1)
     end
 
     task :rails_30 do
       ENV['INTEGRATION'] = 'true'
-      system 'rake appraisal:rails-3.0 integration_test' or exit!(1)
+      system 'appraisal rails-3.0 rake integration_test' or exit!(1)
     end
   end
 
   namespace :cucumber do
     task :rake do
       ENV['INTEGRATION'] = 'true'
-      system 'rake appraisal:rake cucumber' or exit!(1)
+      system 'appraisal rake rake cucumber' or exit!(1)
     end
 
     task :sinatra do
       ENV['INTEGRATION'] = 'true'
-      system 'rake appraisal:sinatra cucumber' or exit!(1)
+      system 'appraisal sinatra rake cucumber' or exit!(1)
     end
 
     task :rack do
       ENV['INTEGRATION'] = 'true'
-      system 'rake appraisal:rack cucumber' or exit!(1)
+      system 'appraisal rack rake cucumber' or exit!(1)
     end
 
     task :rails_40 do
       ENV['INTEGRATION'] = 'true'
-      system 'rake appraisal:rails-4.0 cucumber' or exit!(1)
+      system 'appraisal rails-4.0 rake cucumber' or exit!(1)
     end
 
     task :rails_32 do
       ENV['INTEGRATION'] = 'true'
-      system 'rake appraisal:rails-3.2 cucumber' or exit!(1)
+      system 'appraisal rails-3.2 rake cucumber' or exit!(1)
     end
 
     task :rails_31 do
       ENV['INTEGRATION'] = 'true'
-      system 'rake appraisal:rails-3.1 cucumber' or exit!(1)
+      system 'appraisal rails-3.1 rake cucumber' or exit!(1)
     end
 
     task :rails_30 do
       ENV['INTEGRATION'] = 'true'
-      system 'rake appraisal:rails-3.0 cucumber' or exit!(1)
+      system 'appraisal rails-3.0 rake cucumber' or exit!(1)
     end
   end
 end
